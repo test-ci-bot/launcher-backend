@@ -6,3 +6,4 @@ pipeline:
       - mvn -Xms10m -Xmx192m clean install
       
       
+  
