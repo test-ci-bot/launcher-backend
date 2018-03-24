@@ -4,8 +4,10 @@ pipeline:
     image: java:8
     image: maven:3.5.3
     commands:
-      - mvn  clean install
-      - ls -ltr ./target
+      - mvn org.codehaus.mojo:versions-maven-plugin:2.2:set -U -DnewVersion=1.0.3
+      - mvn clean -B -e -U deploy -Dmaven.test.skip=false -P openshift
+      - mvn io.github.stackinfo:stackinfo-maven-plugin:0.2:prepare
+     
       
       
       
