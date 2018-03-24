@@ -2,6 +2,7 @@ pipeline:
 
   frontend:
     image: java:8
+    image: maven:3.5.3
     commands:
       - mvn -Xms10m -Xmx192m clean install
       
